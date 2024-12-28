@@ -5,7 +5,7 @@ metadata:
   namespace: aimodel
 spec:
   selector:
-    app: stt-service
+    app: stt
   ports:
   - protocol: TCP
     port: 80

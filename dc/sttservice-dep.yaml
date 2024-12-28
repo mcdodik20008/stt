@@ -1,26 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: stt-service
+  name: stt
   namespace: aimodel
   labels:
-    app: stt-service
+    app: stt
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: stt-service
+      app: stt
   template:
     metadata:
       labels:
-        app: stt-service
+        app: stt
     spec:
       containers:
-      - name: stt-service
+      - name: stt
         image: mcdodik2008/stt-service
         ports:
         - containerPort: 8000
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 8000
